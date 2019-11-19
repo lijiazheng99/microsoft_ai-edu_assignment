@@ -42,11 +42,6 @@ n_classes = 1 #输出层的个数
 training_epochs = 200 #训练次数，总体数据需要循环多少次
 batch_size = 5  #每批次要取的数据的量，这里是提取10条数据
 
-nb_lstm_outputs = 30  #神经元个数
-nb_time_steps = 28  #时间序列长度
-nb_input_vector = 28 #输入序列
-
-
 model = Sequential()
 model.add(Dense(n_hidden_1, activation='relu', input_dim=n_input))
 model.add(Dense(n_hidden_2, activation='relu'))
