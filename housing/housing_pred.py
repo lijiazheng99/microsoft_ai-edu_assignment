@@ -23,15 +23,13 @@ df=pd.read_csv(
     header=None,
     names=['CRIM', 'ZN', 'INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','A']
 )
-
 df=df[~df['A'].isin([50])]
 X=df.iloc[0:, 0:13]
 X=X.values
-Y=df['A']
-Y=Y.values
+y=df['A']
+y=y.values
 
-
-train_x,test_x,train_y,test_y = train_test_split(X,Y,test_size=0.1,random_state=0)
+train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=0.1,random_state=0)
 sc = StandardScaler()
 train_x = sc.fit_transform(train_x)
 test_x = sc.fit_transform(test_x)
@@ -41,7 +39,7 @@ n_hidden_2 = 64 #隐藏层2的神经元个数
 n_input = 13 #输入层的个数
 n_classes = 1 #输出层的个数
 training_epochs = 200 #训练次数，总体数据需要循环多少次
-batch_size = 10  #每批次要取的数据的量，这里是提取10条数据
+batch_size = 5  #每批次要取的数据的量，这里是提取10条数据
 
 nb_lstm_outputs = 30  #神经元个数
 nb_time_steps = 28  #时间序列长度
