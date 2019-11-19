@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 #波士顿房价数据
 
 df=pd.read_csv(
-    '/Users/cynthia/Downloads/housing-2.data',
+    './housing.data',
     sep=" +",
     header=None,
     names=['CRIM', 'ZN', 'INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','A']
