@@ -23,6 +23,8 @@ df=pd.read_csv(
     header=None,
     names=['CRIM', 'ZN', 'INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','A']
 )
+
+df=df[~df['A'].isin([50])]
 X=df.iloc[0:, 0:13]
 X=X.values
 Y=df['A']
