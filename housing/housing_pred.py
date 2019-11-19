@@ -24,7 +24,8 @@ df=pd.read_csv(
     names=['CRIM', 'ZN', 'INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','A']
 )
 df=df[~df['A'].isin([50])]
-X=df.iloc[0:, 0:13]
+df=df[~df['RM'].isin([8.78])]
+X=df[['RM','LSTAT','PTRATIO']]
 X=X.values
 y=df['A']
 y=y.values
@@ -36,7 +37,7 @@ test_x = sc.fit_transform(test_x)
 
 n_hidden_1 = 64 #隐藏层1的神经元个数
 n_hidden_2 = 64 #隐藏层2的神经元个数
-n_input = 13 #输入层的个数
+n_input = 3 #输入层的个数
 n_classes = 1 #输出层的个数
 training_epochs = 200 #训练次数，总体数据需要循环多少次
 batch_size = 5  #每批次要取的数据的量，这里是提取10条数据
