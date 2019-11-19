@@ -47,15 +47,6 @@ nb_input_vector = 28 #输入序列
 
 
 model = Sequential()
-
-HIDDEN_SIZE = 128
-BATCH_SIZE = 128
-NUM_ITERATIONS = 25
-NUM_EPOCHS_PER_ITERATION = 1
-NUM_PREDS_PER_EPOCH = 100
-SEQLEN = 10
-STEP = 1
-
 model.add(Dense(n_hidden_1, activation='relu', input_dim=n_input))
 model.add(Dense(n_hidden_2, activation='relu'))
 model.add(Dense(n_classes)) 
